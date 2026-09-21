@@ -98,3 +98,6 @@ class RekeningBank
     public function __toString(): string
     {
         return sprintf('Rekening[%s] %-14s Rp%s',
+            $this->nomor, $this->pemilik, number_format($this->saldo, 2, ',', '.'));
+    }
+}
