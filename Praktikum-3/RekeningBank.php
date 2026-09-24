@@ -9,7 +9,7 @@ class RekeningBank
 {
     // TODO 1: ganti angka ajaib berikut menjadi konstanta bernama.
     //   bunga tahunan 0.025 · biaya admin 5000 · batas penarikan 5000000
-
+    
     // TODO 2: deklarasikan properti statis penghitung jumlah rekening.
 
     private float $saldo;
