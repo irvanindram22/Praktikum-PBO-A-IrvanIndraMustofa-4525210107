@@ -1,4 +1,3 @@
-
 <?php
 
 class PegawaiHarian extends Pegawai
@@ -28,4 +27,3 @@ class PegawaiHarian extends Pegawai
 }
 
 ?>
-    

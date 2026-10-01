@@ -1,3 +1,4 @@
+
 public class Dosen extends PegawaiTetap {
     private double tunjanganFungsional;
 

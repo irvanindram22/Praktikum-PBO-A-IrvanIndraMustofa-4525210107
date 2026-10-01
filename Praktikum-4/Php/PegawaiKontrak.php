@@ -1,3 +1,4 @@
+
 public class PegawaiKontrak extends Pegawai {
 <?php
 
@@ -26,3 +27,4 @@ class PegawaiKontrak extends Pegawai
         return $this->bulanKontrak;
     }
 }
+

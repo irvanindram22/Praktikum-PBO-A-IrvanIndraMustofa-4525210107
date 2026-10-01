@@ -1,3 +1,4 @@
+
 public class PegawaiHarian extends Pegawai {
 
     private final int hariKerja;
