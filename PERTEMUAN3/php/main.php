@@ -5,9 +5,9 @@ require_once __DIR__ . '/RekeningBank.php';
 
 echo 'Jumlah rekening di awal: ', RekeningBank::getJumlahRekening(), PHP_EOL;
 
-$a = new RekeningBank('111', 'Ani', 1_000_000);
+$a = new RekeningBank('111', 'Lia', 1_000_000);
 $b = RekeningBank::rekeningPelajar('222', 'Budi');   // named constructor
-$c = new RekeningBank('333', 'Citra', 250_000);
+$c = new RekeningBank('333', 'Rangga', 250_000);
 
 echo $a, PHP_EOL, $b, PHP_EOL, $c, PHP_EOL;
 echo 'Jumlah rekening sekarang: ', RekeningBank::getJumlahRekening(), '   (seharusnya 3)', PHP_EOL;
@@ -24,7 +24,8 @@ try {
 }
 
 $b->potongBiayaAdmin();
-echo 'Budi setelah potong admin: ', $b, '   (saldo tidak boleh negatif)', PHP_EOL;
+echo 'Lia setelah potong admin: ', $b, '   (saldo tidak boleh negatif)', PHP_EOL;
 
-printf('Bunga setahun dari saldo Ani: Rp%s%s',
+printf('Bunga setahun dari saldo Lia: Rp%s%s',
     number_format(RekeningBank::bungaSetahun($a->getSaldo()), 2, ',', '.'), PHP_EOL);
+    
