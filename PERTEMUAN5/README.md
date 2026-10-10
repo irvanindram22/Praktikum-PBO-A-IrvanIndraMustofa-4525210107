@@ -2,8 +2,8 @@
 
 | Informasi Praktikan | Keterangan |
 | :--- | :--- |
-| **Nama** | Muhammad Rafif Akbar |
-| **NPM** | 4525210125 |
+| **Nama** | Irvan Indra Mustofa |
+| **NPM** | 4525210107 |
 | **Kelas** | A |
 | **Mata Kuliah** | Pemrograman Berbasis Objek (PBO) |
 | **Pertemuan** | 05 - Polimorfisme |
@@ -16,20 +16,20 @@
 ### 1.1. File: `Main.java`
 
 **Penjelasan Kode:**
-> Menguji objek bangun datar melalui tipe induk sehingga method yang dipanggil menyesuaikan kelas objek sebenarnya.
+> Menguji objek bangun datar lewat tipe induk, sehingga method yang dijalankan mengikuti kelas objek yang sebenarnya.
 
 **Bukti Eksekusi (Screenshot):**
-- **Before** ![alt text](image.png)
-- **After** ![alt text](image-1.png)
+- **Before** ![Sebelum](images/MainSebelumJAVA.png)
+- **After** ![Sesudah](images/MainSesudahJAVA.png
 
 ### 1.2. File: `AntiPattern.java`
 
 **Penjelasan Kode:**
-> Contoh pola desain yang kurang untuk dibandingkan dengan pendekatan polimorfisme biasany membutuhkan pemeriksaan tipe untuk setiap bentuk.
+> Contoh desain yang kurang baik sebagai pembanding polimorfisme, karena harus memeriksa tipe untuk setiap bentuk.
 
 **Bukti Eksekusi (Screenshot):**
-- **Before** ![alt text](image-2.png)
-- **After** ![alt text](image-3.png)
+- **Before** ![Sebelum](images/PatterSebelumJAVA.png)
+- **After** ![Sesudah](images/PatterSesudahJAVA.png)
 
 ### 1.3. File: `BangunDatar.java`
 
@@ -37,32 +37,32 @@
 > Kelas abstraksi bangun datar yang mendefinisikan perilaku umum, seperti menghitung luas, untuk diimplementasikan kelas turunan.
 
 **Bukti Eksekusi (Screenshot):**
-- **Before** (kondisi awal/kesalahan, jika ada): `screenshots/before-BangunDatar.png`
-- **After** (kondisi akhir): `screenshots/after-BangunDatar.png`
+- **Before** ![Sebelum](images/BangunDatarSebelumJAVA.jpeg)
+- **After** ![Sesudah](images/BangunDatarSesudahJAVA.png)
 
 ### 1.4. File: `Lingkaran.java`
 
 **Penjelasan Kode:**
-> Kelas bangun datar berbentuk lingkaran yang menghitung luas berdasarkan jari jari.
+> Kelas turunan dari bangun datar yang mewakili lingkaran, dengan perhitungan luas berdasarkan panjang jari-jarinya.
 
 **Bukti Eksekusi (Screenshot):**
-- **Before** ![alt text](image-4.png)
-- **After** ![alt text](image-5.png)
+- **Before** ![Sebelum](images/LingkaranSebelumJAVA.png)
+- **After** ![Sesudah](images/LingkaranSesudahJAVA.png)
 
 ### 1.5. File: `Persegi.java`
 
 **Penjelasan Kode:**
-> Kelas bangun datar berbentuk persegi yang menghitung luas berdasarkan panjang sisi.
+> Kelas turunan dari bangun datar yang mewakili persegi, dengan perhitungan luas berdasarkan panjang sisinya.
 
 **Bukti Eksekusi (Screenshot):**
-- **Before** ![alt text](image-6.png)
-- **After** ![alt text](image-7.png)
+- **Before** ![Sebelum](images/PersegirSebelumJAVA.png)
+- **After** ![Sesudah](images/PersegiSesudahJAVA.png)
 
 ### Output
 
 **Output Program:**
 
-![alt text](image-8.png)
+![Output](images/OutputJAVA.png)
 
 ---
 
@@ -71,38 +71,41 @@
 ### 2.1. File: `main.php`
 
 **Penjelasan Kode:**
-> Program PHP yang menguji implementasi polimorfisme bangun datar dan menampilkan hasil pemanggilan perilaku objek.
+> Program PHP yang membuktikan penerapan polimorfisme pada bangun datar dengan menampilkan hasil pemanggilan method dari masing-masing objek.
 
 **Bukti Eksekusi (Screenshot):**
-- **Before** ![alt text](image-9.png)
-- **After** ![alt text](image-10.png)
+- **Before** ![Sebelum](images/MainSebelumPHP.png)
+- **After** ![Sesudah](images/MainSesudahPHP.png)
 
 ### 2.2. File: `BangunDatar.php`
 
 **Penjelasan Kode:**
-> Abstraksi bangun datar di PHP untuk menyamakan perilaku kelas bentuk yang berbeda.
+> Kelas abstrak bangun datar pada PHP yang menetapkan perilaku umum, sehingga seluruh kelas bentuk memiliki cara pemanggilan yang seragam.
 
 **Bukti Eksekusi (Screenshot):**
-- **Before** ![alt text](image-11.png)
-- **After** ![alt text](image-12.png)
+- **Before** ![Sebelum](images/BangunDatarSebelumPHP1.png)
+- **Before** ![Sebelum](images/BangunDatarSebelumPHP2.png)
+- **After** ![Sesudah](images/BangunDatar1.png)
+- **After** ![Sesudah](images/BangunDatar2.png)
+- **After** ![Sesudah](images/BangunDatar3.png)
 
 ### 2.3. File: `notifikasi.php`
 
 **Penjelasan Kode:**
-> Contoh tambahan pemanfaatan perilaku polimorfik pada notifikasi, sehingga pemanggil menggunakan perilaku umum tanpa bergantung pada detail implementasi.
+>Contoh tambahan polimorfisme pada notifikasi, di mana pemanggil cukup memakai perilaku umum tanpa tahu detail implementasinya.
 
 **Bukti Eksekusi (Screenshot):**
-- **Before** ![alt text](image-13.png)
-- **After** ![alt text](image-14.png)
+- **Before** ![Sebelum](images/NotifikasiSesudahPHP.png)
+- **After** ![Sesudah](images/NotifikasiSesudahPHP.png)
 
 ### Output
 
 **Output Program:**
 
-![alt text](image-15.png)
+![Output](images/OutputPHP.png)
 
 ---
 
 ## 3. Kesimpulan
 
-Polimorfisme memungkinkan objek dari kelas berbeda diperlakukan melalui tipe atau kontrak yang sama, tetapi menjalankan implementasi method masing-masing. Pendekatan ini mengurangi percabangan berdasarkan tipe dan memudahkan penambahan kelas baru.
+Polimorfisme membuat objek dari kelas yang berbeda dapat dipakai lewat tipe atau kontrak yang sama, namun tetap menjalankan method sesuai kelasnya. Dengan begitu, pengecekan tipe berkurang dan kelas baru lebih mudah ditambahkan.
