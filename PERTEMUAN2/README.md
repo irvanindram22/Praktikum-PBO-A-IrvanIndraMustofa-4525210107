@@ -1,85 +1,72 @@
 # LAPORAN PRAKTIKUM PEMROGRAMAN BERBASIS OBJEK
 
-
 | Informasi Praktikan | Keterangan |
-|---|---|
-| **Nama** | Khaira Rahma Aprilliani|
-| **NPM** | 4525210108 |
+| :--- | :--- |
+| **Nama** | Irvan Indra Mustofa |
+| **NPM** | 4525210107 |
 | **Kelas** | A |
 | **Mata Kuliah** | Pemrograman Berbasis Objek (PBO) |
-| **Pertemuan** | [02] - [Enkapsulsasi] |
-| **Tanggal** | [10-09-2026] |
+| **Pertemuan** | 02 - Enkapsulasi |
+| **Tanggal** | 10-10-2026 |
 
-## 1. Implemntasi Java
+---
 
-### 1.1 File Mahasiswa.java
+## 1. Implementasi Java
 
-### Sebelum
+### 1.1. File: `Mahasiswa.java`
+**Penjelasan Kode:**
+ Class `Mahasiswa` menerapkan enkapsulasi: seluruh properti bersifat `private`, `nim` dan `nama` dibuat `final` agar tidak berubah setelah objek terbentuk, dan tidak ada method `setNim()`. Constructor memvalidasi semua data sebelum disimpan. NIM ditolak jika `null` atau kosong (`nim == null || nim.trim().isEmpty()`) dan disimpan dalam bentuk yang sudah di-`trim()`. Setiap komponen nilai diperiksa oleh method pembantu `pastikanNilaiSah`, yang menolak nama komponen kosong, nilai `NaN`, nilai `Infinity`, serta nilai di luar rentang 0-100 dengan pesan kesalahan yang menyebut komponen dan nilai yang salah. Nilai akhir dihitung dengan konstanta bobot (30% tugas, 30% UTS, 40% UAS) di method `nilaiAkhir()`, lalu `hurufMutu()` mengubahnya menjadi huruf A sampai E dan melempar `IllegalStateException` bila nilai akhir tidak valid. Getter yang tersedia adalah `getNim()`, `getNama()`, dan `getNilaiAkhir()`.
 
-Kode awal `Mahasiswa.java` berisi kerangka class dengan beberapa komentar `TODO` yang harus dikerjakan.
+**Bukti Eksekusi (Screenshot):**
+* **Before** *(Kondisi awal / Kesalahan kompilasi)*:
 
-![Java setelah - main.java](images/image-2.png) 
+![SS Before Mahasiswa.java](images/MahasiswaSebelumJAVA.png)
 
-![Java setelah - main.java](images/image-3.png)
+* **After** *(Kondisi akhir / Eksekusi berhasil)*:
 
-![Java setelah - main.java](images/image-4.png)
+![SS After Mahasiswa.java](images/MahasiswaSesudah.png)
 
-**Yang diminta (TODO):**
+### 1.2. File: `Main.java`
+**Penjelasan Kode:**
+ `Main.java` adalah program utama yang memakai class `Mahasiswa`. Program membuat beberapa objek mahasiswa dengan data valid lalu mencetak rekap nilai akhir beserta huruf mutunya. Setelah itu program sengaja mencoba membuat objek dengan data yang melanggar aturan (misalnya nilai 150) di dalam blok `try-catch`, sehingga pesan penolakan dari constructor dapat ditampilkan tanpa program berhenti.
 
-1. **TODO 1**: `nim` dan `nama` tidak boleh berubah setelah objek dibuat, jadi dibuat `final`. Nilai (tugas, UTS, UAS) boleh berubah, jadi tidak `final`.
-2. **TODO 2**: Constructor harus menolak NIM yang kosong atau `null`.
-3. **TODO 3**: Constructor harus menolak setiap komponen nilai yang di luar rentang 0-100.
-4. **TODO 4**: Buat method `private` pembantu (`pastikanNilaiSah`) untuk memvalidasi satu komponen nilai.
-5. **TODO 5**: Hitung nilai akhir memakai konstanta bobot (30% tugas + 30% UTS + 40% UAS), bukan angka yang ditulis langsung.
-6. **TODO 6**: Kembalikan huruf mutu berdasarkan nilai akhir (A = 80 ke atas, B = 70-79, C = 60-69, D = 50-59, E = di bawah 50).
-7. **TODO 7**: Buat getter untuk `nim`, `nama`, dan `nilaiAkhir`. Tidak boleh ada `setNim()`.
+**Bukti Eksekusi (Screenshot):**`.
 
-**Kondisi kode sebelum diperbaiki:**
+![SS Main.java](images/MainJAVA.png)
 
-- Validasi NIM hanya memeriksa `nim == null || nim.isBlank()`, dan NIM disimpan apa adanya (tanpa spasi di pinggir dibuang).
-- `pastikanNilaiSah` hanya memeriksa `nilai < NILAI_MIN || nilai > NILAI_MAX`. Nilai `NaN` (bukan angka) atau `Infinity` belum ditangani.
-- `hurufMutu()` langsung membandingkan nilai akhir tanpa memeriksa apakah nilainya valid.
+### Output
+**Output Program:**
+![Output Java](images/OutputJAVA.png)
 
-### Setelah
+---
 
-Kode setelah diperbaiki: validasi dibuat lebih ketat dan lebih aman.
+## 2. Implementasi PHP
 
-![Setelah - bagian 1](images/sesudah(1).png)
+### 2.1. File: `Mahasiswa.php`
+**Penjelasan Kode:**
+ Versi PHP dari class `Mahasiswa` dengan aturan yang sama seperti versi Java. Properti dibuat `private` dan hanya dapat diakses lewat getter. Constructor menolak NIM kosong dan nilai di luar rentang 0-100 dengan melempar `InvalidArgumentException`, sehingga objek yang melanggar aturan tidak pernah terbentuk. Nilai akhir dihitung dengan bobot 30% tugas, 30% UTS, dan 40% UAS, kemudian dikonversi menjadi huruf mutu.
 
-![Setelah - bagian 2](images/sesudah(2).png)
+**Bukti Eksekusi (Screenshot):**
 
-![Setelah - bagian 3](images/sesudah(3).png)
+![SS Before Mahasiswa.php](images/MahasiswaSebelumPHP.png)
 
-![Setelah - bagian 4](images/sesudah(4).png)
+* **After** *(Kondisi akhir / Eksekusi berhasil)*:
 
+![SS After Mahasiswa.php](images/MahasiswaSesudahPHP.png)
 
-**Penjelasan perubahan:**
+### 2.2. File: `Main.php`
+**Penjelasan Kode:**
+`Main.php` mengaktifkan `declare(strict_types=1)` lalu memuat class dengan `require_once __DIR__ . '/Mahasiswa.php'`, sehingga file tetap ditemukan dari folder mana pun program dijalankan. Program membuat tiga objek mahasiswa, menampilkan rekap nilainya dengan `foreach`, lalu mencoba membuat objek dengan nilai 150 di dalam blok `try-catch`. Pengecualian `InvalidArgumentException` ditangkap dan pesannya ditampilkan sebagai bukti bahwa objek menolak data yang melanggar aturan.
 
-1. **Validasi NIM lebih ketat.** Kondisi diganti menjadi `nim == null || nim.trim().isEmpty()`, dan pesan error menjadi `"NIM tidak boleh kosong atau null"`. NIM yang lolos disimpan dalam variabel `nimValid = nim.trim()`, sehingga spasi di awal/akhir otomatis dibuang (`" 2024001 "` disimpan sebagai `"2024001"`).
-2. **Validasi nilai lebih lengkap.** `pastikanNilaiSah` sekarang juga menolak nilai `NaN` dan `Infinity` lewat `Double.isNaN(nilai)` dan `Double.isInfinite(nilai)`, selain nilai di luar rentang 0-100.
-3. **Nama komponen ikut divalidasi.** Method pembantu juga memeriksa bahwa `namaKomponen` tidak null atau kosong, sehingga pesan error selalu jelas menyebut komponen mana yang salah.
-4. **Pesan error lebih jelas.** Bunyinya menjadi `"Nilai tugas harus berada di rentang 0.0 sampai 100.0, diberikan: 150.0"`, jadi pengguna tahu batas yang benar dan nilai yang salah.
-5. **Validasi dulu, baru simpan.** Semua pengecekan (NIM dan ketiga nilai) dijalankan lebih dulu, baru setelah semuanya lolos nilai-nilai diisikan ke properti (`this.nim = nimValid;`, dst.). Dengan begitu objek tidak pernah terbentuk dalam kondisi setengah jadi.
-6. **`nilaiAkhir()` lebih rapi.** Rumusnya sama, tetapi setiap suku diberi tanda kurung dan ditulis per baris supaya mudah dibaca:
-   `(nilaiTugas * BOBOT_TUGAS) + (nilaiUts * BOBOT_UTS) + (nilaiUas * BOBOT_UAS)`.
-7. **`hurufMutu()` diberi pengaman.** Sebelum menentukan huruf, nilai akhir diperiksa. Kalau `NaN` atau `Infinity`, method melempar `IllegalStateException("Nilai akhir tidak valid")`.
-8. **Getter tetap tanpa setter NIM.** `getNim()`, `getNama()`, dan `getNilaiAkhir()` tetap ada, dan `nim` serta `nama` tetap `final`, sehingga tidak bisa diubah setelah objek dibuat.
+**Bukti Eksekusi (Screenshot):**
 
-## Output java
-![alt text](image.png)
+![SS Main.php](images/MainPHP.png)
 
-## Output php
-![alt text](image-1.png)
+### Output
+**Output Program:**
+![Output PHP](images/OutputPHP.png)
 
-Program PBO yang menunjukkan bagaimana **enkapsulasi** dipakai untuk menjaga aturan (*invariant*) sebuah objek. Objek `Mahasiswa` menolak data yang tidak sah sejak constructor dipanggil, sehingga tidak mungkin ada objek dengan data rusak.
+---
 
-## Invariant
-
-1. `nim` tidak boleh kosong/null dan **tidak berubah** setelah objek dibuat
-2. Setiap komponen nilai (tugas, UTS, UAS) harus berada di rentang **0 - 100**
-3. Nilai akhir = **30% tugas + 30% UTS + 40% UAS**
-
-
-## Kesimpulan: 
-
-Dengan enkapsulasi (properti `private`, `nim` dan `nama` `final`, serta validasi di constructor), objek `Mahasiswa` tidak mungkin dibuat dengan data yang melanggar aturan. Perbaikan pada kode (membuang spasi NIM, menolak `NaN` dan `Infinity`, serta pengaman di `hurufMutu()`) membuat objek lebih tahan terhadap input yang tidak wajar, dan semua aturan (invariant) tetap terjaga sepanjang objek hidup.
+## 3. Kesimpulan
+ Enkapsulasi membuat objek `Mahasiswa` mampu menjaga aturannya sendiri: properti `private`, `nim` dan `nama` yang `final` (pada Java), serta validasi di constructor memastikan tidak ada objek dengan data yang melanggar aturan. Perbaikan pada kode, yaitu membuang spasi pada NIM, menolak `NaN` dan `Infinity`, dan menambahkan pengaman pada `hurufMutu()`, membuat objek lebih tahan terhadap input yang tidak wajar. Praktikum ini juga menunjukkan bahwa kesalahan `file not found` pada kompilasi maupun eksekusi umumnya disebabkan oleh terminal yang berada di folder yang salah. Aturan (invariant) objek tetap terjaga sepanjang objek digunakan, baik pada implementasi Java maupun PHP.
