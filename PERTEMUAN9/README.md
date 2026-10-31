@@ -6,7 +6,7 @@
 | **NPM** | 4525210107 |
 | **Kelas** | A |
 | **Mata Kuliah** | Pemrograman Berbasis Objek (PBO) |
-| **Pertemuan** | 07 - Komposisi dan Agregasi |
+| **Pertemuan** | 09 -  Package, Namespace, dan Build Tool |
 | **Tanggal** | Kamis 29 Oktober 2026 |
 
 # Panduan Praktikum Sesi 9: Package, Namespace, dan Build Tool
