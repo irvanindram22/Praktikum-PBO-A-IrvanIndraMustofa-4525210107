@@ -5,8 +5,7 @@ public class Main {
         Pegawai[] daftar = {
             new PegawaiTetap("198701012010", "Ani Lestari", 6_000_000, 15),
             new PegawaiKontrak("K-2024-007", "Budi Santoso", 5_000_000, 12),
-            new Dosen("D-2024-001", "Citra Dewi", 7_000_000, 10, 150_000),         // Objek Dosen
-            new Pegawaiharian("H-2024-001", "Dedi Pratama", 100_000, 20)          // Objek PegawaiHarian
+            new PegawaiHarian("H-2024-001", "Dedi Pratama", 100_000, 20)         // Objek PegawaiHarian
         };
 
         System.out.println("=== Daftar Gaji ===");
